@@ -6,16 +6,16 @@ namespace Crr.Services
 {
     public interface ITermService
     {
-        Term GetById(int termId);
+        Term GetById(string linkName);
         IEnumerable<Term> GetAll();
 
         Task Create(Term term);
-        Task Delete(int termId);
+        Task Delete(string linkName);
 
-        Task UpdateTermName(int termId, string newName);
-        Task UpdateTermLinkName(int termId, string newLinkName);
-        Task UpdateTermDescription(int termId, string newDescription);
-        Task UpdateTermImageUrl(int termId, string newImageUrl);
+        Task UpdateTermName(string linkName, string newName);
+        Task UpdateTermLinkName(string linkName, string newLinkName);
+        Task UpdateTermDescription(string linkName, string newDescription);
+        Task UpdateTermImageUrl(string linkName, string newImageUrl);
 
     }
 }

@@ -14,13 +14,13 @@ namespace Crr.Controllers
         }
 
         public IActionResult Index()
-        {
+        {   
+
             var terms = _termService.GetAll()
                 .Select(term => new TermModel
                 {
-                    Id = term.Id,
-                    Name = term.Name,
                     LinkName = term.LinkName,
+                    Name = term.Name,
                     Description = term.Description,
                     ImageUrl = term.ImageUrl
                 });

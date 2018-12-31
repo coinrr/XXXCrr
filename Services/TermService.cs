@@ -19,9 +19,9 @@ namespace Crr.Services
             await _context.SaveChangesAsync();
         }
 
-        public async Task Delete(int termId)
+        public async Task Delete(string linkName)
         {
-            var term = GetById(termId);
+            var term = GetById(linkName);
             
             _context.Remove(term);
             await _context.SaveChangesAsync();
@@ -32,44 +32,44 @@ namespace Crr.Services
             return _context.Terms;
         }
 
-        public Term GetById(int termId)
+        public Term GetById(string linkName)
         {
             return _context.Terms
-                .Where(w => w.Id == termId)
+                .Where(w => w.LinkName == linkName)
                 .FirstOrDefault();
 
         }
 
-        public async Task UpdateTermDescription(int termId, string newDescription)
+        public async Task UpdateTermDescription(string linkName, string newDescription)
         {
-            var term = GetById(termId);
+            var term = GetById(linkName);
             term.Description = newDescription;
 
             _context.Update(term);
             await _context.SaveChangesAsync();
         }
 
-        public async Task UpdateTermImageUrl(int termId, string newImageUrl)
+        public async Task UpdateTermImageUrl(string linkName, string newImageUrl)
         {
-            var term = GetById(termId);
+            var term = GetById(linkName);
             term.ImageUrl = newImageUrl;
 
             _context.Update(term);
             await _context.SaveChangesAsync();
         }
 
-        public async Task UpdateTermLinkName(int termId, string newLinkName)
+        public async Task UpdateTermLinkName(string linkName, string newLinkName)
         {
-            var term = GetById(termId);
+            var term = GetById(linkName);
             term.LinkName = newLinkName;
 
             _context.Update(term);
             await _context.SaveChangesAsync();
         }
 
-        public async Task UpdateTermName(int termId, string newName)
+        public async Task UpdateTermName(string linkName, string newName)
         {
-            var term = GetById(termId);
+            var term = GetById(linkName);
             term.Name = newName;
 
             _context.Update(term);

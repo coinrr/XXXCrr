@@ -14,5 +14,11 @@ namespace Crr.Data
         {
         }
         public DbSet<Term> Terms { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Term>()
+                .HasKey(t => t.LinkName);
+        }
     }
 }
