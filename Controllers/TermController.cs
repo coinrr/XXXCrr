@@ -1,3 +1,5 @@
+using System.Linq;
+using Crr.Models.Term;
 using Crr.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -13,10 +15,22 @@ namespace Crr.Controllers
 
         public IActionResult Index()
         {
-            var terms = _termService.GetAll();
-                
-            
-        }
+            var terms = _termService.GetAll()
+                .Select(term => new TermModel
+                {
+                    Id = term.Id,
+                    Name = term.Name,
+                    LinkName = term.LinkName,
+                    Description = term.Description,
+                    ImageUrl = term.ImageUrl
+                });
 
+            var model = new TermIndexModel
+            {
+                TermIndex = terms
+            };
+
+            return View(model);
+        }
     }
 }
