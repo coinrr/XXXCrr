@@ -6,14 +6,14 @@ using Crr.EntityModels;
 
 namespace Crr.Services
 {
-    public class WhatIsService : IWhatIsService
+    public class TermService : ITermService
     {
         private readonly ApplicationDbContext _context;
-        public WhatIsService(ApplicationDbContext context)
+        public TermService(ApplicationDbContext context)
         {
             _context = context;
         }
-        public async Task Create(WhatIsTerm term)
+        public async Task Create(Term term)
         {
             _context.Add(term);
             await _context.SaveChangesAsync();
@@ -27,14 +27,14 @@ namespace Crr.Services
             await _context.SaveChangesAsync();
         }
 
-        public IEnumerable<WhatIsTerm> GetAll()
+        public IEnumerable<Term> GetAll()
         {
-            return _context.WhatIsTerms;
+            return _context.Terms;
         }
 
-        public WhatIsTerm GetById(int termId)
+        public Term GetById(int termId)
         {
-            return _context.WhatIsTerms
+            return _context.Terms
                 .Where(w => w.Id == termId)
                 .FirstOrDefault();
 

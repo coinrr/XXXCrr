@@ -13,6 +13,6 @@ namespace Crr.Data
             : base(options)
         {
         }
-        public DbSet<WhatIsTerm> WhatIsTerms { get; set; }
+        public DbSet<Term> Terms { get; set; }
     }
 }
