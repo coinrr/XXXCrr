@@ -41,3 +41,4 @@
 /Users/jackal/Projects/Crr/obj/Debug/netcoreapp2.1/Razor/Areas/Identity/Pages/_ValidationScriptsPartial.g.cshtml.cs
 /Users/jackal/Projects/Crr/obj/Debug/netcoreapp2.1/Razor/Areas/Identity/Pages/_ViewImports.g.cshtml.cs
 /Users/jackal/Projects/Crr/obj/Debug/netcoreapp2.1/Razor/Views/Term/Index.g.cshtml.cs
+/Users/jackal/Projects/Crr/obj/Debug/netcoreapp2.1/Razor/Views/Term/Topic.g.cshtml.cs

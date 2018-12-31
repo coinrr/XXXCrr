@@ -13,6 +13,7 @@ namespace Crr.Controllers
             _termService = termService;
         }
 
+        [Route("what-is")]
         public IActionResult Index()
         {   
 
@@ -32,5 +33,22 @@ namespace Crr.Controllers
 
             return View(model);
         }
+
+        [Route("what-is/{linkName}")]
+        public IActionResult Topic(string linkName)
+        {
+            var term = _termService.GetById(linkName);
+
+            var model = new TermModel
+            {
+                LinkName = term.LinkName,
+                Name = term.Name,
+                Description = term.Description,
+                ImageUrl = term.ImageUrl
+            };
+
+            return View(model);
+        }
+
     }
 }
