@@ -27,7 +27,7 @@ namespace Crr.Controllers
 
             var model = new TermIndexModel
             {
-                TermIndex = terms
+                TermList = terms
             };
 
             return View(model);

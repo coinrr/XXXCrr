@@ -13,6 +13,7 @@ using Crr.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Crr.EntityModels;
+using Crr.Services;
 
 namespace Crr
 {
@@ -44,6 +45,8 @@ namespace Crr
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultUI()
                 .AddDefaultTokenProviders();
+
+            services.AddScoped<ITermService, TermService>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }

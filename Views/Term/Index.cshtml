@@ -1,0 +1,22 @@
+@model Crr.Models.Term.TermIndexModel
+
+<h1>Blockchain Terms!</h1>
+
+<table class="table table-hover">
+    <tbody>
+        @foreach(var term in Model.TermList)
+        {
+            <tr>
+                <td>
+                    @term.Id
+                </td>
+                <td>
+                    @term.Name
+                </td>
+                <td>
+                    @term.Description
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

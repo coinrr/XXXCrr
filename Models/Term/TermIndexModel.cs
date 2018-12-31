@@ -4,6 +4,6 @@ namespace Crr.Models.Term
 {
     public class TermIndexModel
     {
-        public IEnumerable<TermModel> TermIndex { get; set; }
+        public IEnumerable<TermModel> TermList { get; set; }
     }
 }
