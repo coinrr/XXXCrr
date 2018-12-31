@@ -17,8 +17,12 @@ namespace Crr.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
+            
             modelBuilder.Entity<Term>()
                 .HasKey(t => t.LinkName);
         }
+
+        
     }
 }
